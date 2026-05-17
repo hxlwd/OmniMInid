@@ -1,0 +1,19 @@
+name = "omnimind-worker-api"
+main = "worker/src/index.ts"
+compatibility_date = "2026-05-17"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+DEEPSEEK_MODEL = "deepseek-v4-pro"
+DEEPSEEK_THINKING = "enabled"
+DEEPSEEK_REASONING_EFFORT = "high"
+OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"
+SUPABASE_STORAGE_BUCKET = "learning-assets"
+
+[[queues.producers]]
+binding = "INGEST_QUEUE"
+queue = "omnimind-ingest"
+
+[[queues.consumers]]
+queue = "omnimind-ingest"

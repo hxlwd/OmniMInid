@@ -5,7 +5,8 @@ import {
   Library, 
   User, 
   Settings, 
-  HelpCircle 
+  HelpCircle,
+  BrainCircuit
 } from 'lucide-react';
 import { ViewScope } from '../types';
 
@@ -70,33 +71,43 @@ export function Sidebar({ currentView, onChangeView }: SidebarProps) {
         }}
       />
       
+      <div className="mb-stack-lg flex items-center gap-stack-md min-w-0">
+        <div className="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+          <BrainCircuit className="w-6 h-6" />
+        </div>
+        <div className="min-w-0">
+          <p className="font-headline-md text-on-surface truncate">OmniMind</p>
+          <p className="font-label-sm text-on-surface-variant truncate">学习 Agent 中枢</p>
+        </div>
+      </div>
+
       <div className="flex-1 flex flex-col gap-2 mt-stack-md pt-2">
         <a className={getNavClass('dashboard')} onClick={(e) => { e.preventDefault(); onChangeView('dashboard'); }}>
           <LayoutDashboard className="w-5 h-5" />
-          Dashboard
+          Agent 工作台
         </a>
         <a className={getNavClass('notes')} onClick={(e) => { e.preventDefault(); onChangeView('notes'); }}>
           <FileText className="w-5 h-5" />
-          Notes
+          知识库
         </a>
         <a className={getNavClass('flashcards')} onClick={(e) => { e.preventDefault(); onChangeView('flashcards'); }}>
           <Library className="w-5 h-5" />
-          Flashcards
+          练习中心
         </a>
         <a className={getNavClass('profile')} onClick={(e) => { e.preventDefault(); onChangeView('profile'); }}>
           <User className="w-5 h-5" />
-          Profile
+          学习画像
         </a>
       </div>
       
       <div className="flex flex-col gap-2 mt-auto pt-stack-md border-t border-outline-variant/30">
         <a className={getNavClass('settings')} onClick={(e) => { e.preventDefault(); onChangeView('settings'); }}>
           <Settings className="w-5 h-5" />
-          Settings
+          设置
         </a>
         <a className="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md transition-colors duration-200 cursor-pointer">
           <HelpCircle className="w-5 h-5" />
-          Help
+          帮助
         </a>
       </div>
     </nav>
