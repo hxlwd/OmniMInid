@@ -46,5 +46,8 @@ class MongoRuntime:
             [("user_id", ASCENDING), ("created_at", DESCENDING)]
         )
 
+    def ping(self) -> None:
+        self.client.admin.command("ping")
+
     def close(self) -> None:
         self.client.close()

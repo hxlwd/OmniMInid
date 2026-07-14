@@ -44,3 +44,11 @@ def test_close_releases_mongo_client() -> None:
     MongoRuntime(client=client, database_name="omnimind_test").close()
 
     client.close.assert_called_once_with()
+
+
+def test_ping_checks_mongo_admin_database() -> None:
+    client = MagicMock()
+
+    MongoRuntime(client=client, database_name="omnimind_test").ping()
+
+    client.admin.command.assert_called_once_with("ping")
