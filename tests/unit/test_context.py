@@ -27,3 +27,9 @@ def test_context_rejects_path_characters(field: str) -> None:
 
     with pytest.raises(ValidationError):
         RuntimeContext(**values)
+
+
+@pytest.mark.parametrize("value", [".", ".."])
+def test_context_rejects_dot_segments(value: str) -> None:
+    with pytest.raises(ValidationError):
+        RuntimeContext(user_id=value)
