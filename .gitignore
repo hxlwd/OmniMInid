@@ -1,1 +1,15 @@
 .worktrees/
+.env
+.venv/
+.tools/
+.uv-cache/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+node_modules/
+.template/
+tmp/
