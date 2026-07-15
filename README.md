@@ -4,7 +4,7 @@ OmniMind 是一个面向高校课程、高考、考研等学习场景的个人�
 
 ## 当前状态
 
-早期的 Cloudflare Worker、Supabase、TypeScript LangGraph 和 React 界面原型已经按项目要求清理。当前仓库保留中文说明和已批准的系统设计，正式项目将从 `langchain-ai/new-langgraph-project` 模板重新搭建，并采用以下技术架构：
+`langchain-ai/new-langgraph-project` 模板重新搭建，并采用以下技术架构：
 
 - 使用 LangChain 家族的 Deep Agents 构建 Agent harness。
 - 使用 YAML 声明子 Agent 的 `name`、`description`、`tools`、`skills` 和 `system_prompt`。
